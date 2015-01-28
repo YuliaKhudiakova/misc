@@ -39,8 +39,41 @@ size_t TPriorityQueue<T>::GetSize() const {
     return Pq.size() - 1;
 }
 
-//
-//void TPriorityQueue::BubbleUp(size_t index);
-//void TPriorityQueue::BubbleDown(size_t index);
-//
+template<typename T>
+void TPriorityQueue<T>::BubbleUp(size_t index) {
+    
+}
+
+template<typename T>
+void TPriorityQueue<T>::BubbleDown(size_t index) {
+    size_t size = Pq.size();
+    
+//    size_t child = 2 * index;
+//    while (child < size) {
+//        if (Pq[index] > Pq[child]) {
+//            std::swap(Pq[index], Pq[child]);
+//            index = child;
+//            child = 2 * index;
+//        } else if (child + 1 < size && Pq[index] > Pq[child + 1]) {
+//            std::swap(Pq[index], Pq[child + 1]);
+//            index = child + 1;
+//            child = 2 * index;
+//        } else {
+//            break;
+//        }
+//    }
+    
+    while (2 * index < size) {
+        size_t child = 2 * index;
+        if (child + 1 < size && Pq[child] > Pq[child + 1])
+            ++child;
+            
+        if (Pq[index] < Pq[2 * index]) {
+            std::swap(Pq[index], Pq[2 * index]);
+            index *= 2;
+        } else if ()
+            ++child;
+    }
+}
+
 
